@@ -6,10 +6,10 @@ J'ai commencé par afficher une simple liste des personnages de Rick et Morty à
 
 - Random cocktail: Lorsque l'on clique sur le bouton, le j'envoie une requete qui récupère un cocktail au hazard.
 
-![Screen 2](/img/screen2.png)
+![Screen 1](https://github.com/clementlebas/ProgMobile-ReactNative/blob/master/MyApp/img/screen2.png)
 
-![Screen 1](/img/screen1.png)
+![Screen 2](https://github.com/clementlebas/ProgMobile-ReactNative/blob/master/MyApp/img/screen1.png)
 
 - Formatage: J'ai ensuite formaté les données afin d'avoir un rendu simple des ingrédients qui sont parfois nombreux.
 
-![Screen 1](/img/ingredient.png)
+![Screen 1](https://github.com/clementlebas/ProgMobile-ReactNative/blob/master/MyApp/img/ingredient.png)
