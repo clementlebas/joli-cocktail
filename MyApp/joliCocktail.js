@@ -20,13 +20,22 @@ class JoliCocktail extends Component {
 
     // axios.get('https://rickandmortyapi.com/api/character').then(response => {
     //   this.setState({list: response.data.results});
+    //   // console.log('list', list);
     // });
+
+    // axios
+    //   .get('https://the-cocktail-db.p.rapidapi.com/list.php')
+    //   .then(response => {
+    //     const responseObject = JSON.parse(response.toString());
+
+    //     console.log('responseObject', responseObject);
+    //   });
   }
 
   getRandomCocktail = () => {
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-      .then((response) => {
+      .then(response => {
         const responseObject = JSON.parse(
           response.request._response.toString(),
         );
@@ -55,11 +64,11 @@ class JoliCocktail extends Component {
           responseObject.drinks[0].strIngredient14,
         ];
 
-        const formatedIngredients = ingredients.map((ing) => {
-          while (ing) return `\n - ${ing}`;
+        const formatedIngredients = ingredients.map(ing => {
+          while (ing) {
+            return `\n - ${ing}`;
+          }
         });
-
-        console.log('formatedIngredients', formatedIngredients);
 
         const randomCocktail = {
           title: responseObject.drinks[0].strDrink,
@@ -69,8 +78,6 @@ class JoliCocktail extends Component {
           ingredients: formatedIngredients,
           instructions: responseObject.drinks[0].strInstructions,
         };
-
-        // https://the-cocktail-db.p.rapidapi.com/list.php
 
         this.setState({
           // data: response.request._response.toString(),
@@ -82,8 +89,8 @@ class JoliCocktail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [],
-      data: '',
+      // list: [],
+      // data: '',
       randomCocktail: {},
     };
   }
@@ -91,7 +98,6 @@ class JoliCocktail extends Component {
   keyExtractor = (item, index) => index.toString();
   renderItem = ({item}) => {
     const {randomCocktail} = this.state;
-    console.log('randomCocktail', randomCocktail);
     return (
       <ListItem
         title={randomCocktail.title}
@@ -104,17 +110,10 @@ class JoliCocktail extends Component {
 
   render() {
     const {randomCocktail} = this.state;
-
-    // const formattedIngredient = randomCocktail.ingredients.map(
-    //   ingredient => {
-
-    //     return ingredient = '-'},
-    // );
     return (
       <>
         <StatusBar barStyle="dark-content" />
         <View style={styles.top}>
-          {/* <Text style={styles.title}>JOLI COCKTAIL</Text> */}
           <Image
             style={styles.logo}
             source={require('./img/jolicockail.png')}
@@ -147,12 +146,6 @@ class JoliCocktail extends Component {
                   }}
                 />
               </View>
-
-              {/* <FlatList
-              keyExtractor={this.keyExtractor}
-              data={this.state.list}
-              renderItem={this.renderItem}
-            /> */}
             </View>
             <View style={styles.body}>
               <Text>
@@ -164,6 +157,13 @@ class JoliCocktail extends Component {
               </Text>
             </View>
           </ScrollView>
+          {/* <View>
+            <FlatList
+              keyExtractor={this.keyExtractor}
+              data={randomCocktail}
+              renderItem={this.renderItem}
+            />
+          </View> */}
 
           {/* <ScrollView
             contentInsetAdjustmentBehavior="automatic"
