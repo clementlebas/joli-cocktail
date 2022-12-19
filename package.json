@@ -10,10 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.2",
     "logkitty": "^0.7.1",
     "react": "16.11.0",
-    "react-native": "0.62.0",
+    "react-native": "0.70.6",
     "react-native-elements": "^1.2.7",
     "react-native-vector-icons": "^6.6.0"
   },
@@ -23,7 +23,7 @@
     "@react-native-community/eslint-config": "0.0.5",
     "babel-jest": "24.9.0",
     "eslint": "6.8.0",
-    "jest": "24.9.0",
+    "jest": "29.3.1",
     "metro-react-native-babel-preset": "0.58.0",
     "react-test-renderer": "16.11.0"
   },
